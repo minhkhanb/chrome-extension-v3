@@ -21,7 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:chrome": "node ./scripts/build.js && npm run clean",
-    "clean": "cd build && mv static/js/*.js chunk.js && mv static/css/*.css main.css && rm -r static/js",
+    "clean": "cd build && mv js/*.chunk.js js/chunk.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

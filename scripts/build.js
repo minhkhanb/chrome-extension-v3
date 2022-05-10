@@ -25,7 +25,21 @@ config.entry = {
 config.output.path = path.join(path.dirname(__dirname), 'build');
 
 // If we want to rename resulting bundle file to not have hashes, we can do that!
-config.output.filename = '[name].js';
+config.output.filename = 'js/[name].js';
+config.output.chunkFilename = "js/[name].chunk.js"
+
+// Get rid of hash for css files
+const miniCssExtractPlugin = config.plugins.find(element => element.constructor.name === "MiniCssExtractPlugin");
+miniCssExtractPlugin.options.filename = "css/[name].css"
+miniCssExtractPlugin.options.chunkFilename = "css/[name].css"
+
+// Get rid of hash for media files
+config.module.rules[1].oneOf.forEach(oneOf => {
+  if (!oneOf.options || oneOf.options.name !== "media/[name].[hash:8].[ext]") {
+    return;
+  }
+  oneOf.options.name = "media/[name].[ext]"
+});
 
 // And the last thing: disabling splitting
 config.optimization.splitChunks = {
