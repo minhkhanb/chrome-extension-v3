@@ -1,0 +1,1 @@
+export const backgroundLoaded = () => console.log('Background Script');
