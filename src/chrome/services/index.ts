@@ -1,4 +1,4 @@
-import { TabUrl } from '../utils';
+import { TabUrl } from '../../utils';
 
 console.log('Background Script');
 

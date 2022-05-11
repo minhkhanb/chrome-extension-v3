@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserWrap from '../section/UserWrap';
-import { TabUrl } from '../utils';
+import UserWrap from '../ui/section/UserWrap';
+import { TabUrl } from '../../utils';
 
 console.log('Content Script');
 

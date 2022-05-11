@@ -12,11 +12,11 @@ config.entry = {
   background: [
     path.join(
       path.dirname(__dirname),
-      'src/chromeServices/index.ts'
+      'src/chrome/index.ts'
     ),
   ],
   content: [
-    path.join(path.dirname(__dirname), 'src/chromeServices/DOMEvaluator.tsx'),
+    path.join(path.dirname(__dirname), 'src/chrome/DOMEvaluator.tsx'),
   ],
 };
 
