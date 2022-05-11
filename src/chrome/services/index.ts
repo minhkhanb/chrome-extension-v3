@@ -14,8 +14,6 @@ chrome.tabs.onUpdated.addListener(function () {
 
       let matches = url.match(TabUrl.BASE_URL_MATCH_QUERY);
 
-      console.log('bg onUpdated matches: ', matches);
-
       if (matches && matches[1] && matches[1] !== userId) {
         userId = matches[1];
 
@@ -35,8 +33,6 @@ chrome.runtime.onMessage.addListener(function (params) {
       url = tabs[0].url;
 
       let matches = url.match(TabUrl.BASE_URL_MATCH_QUERY);
-
-      console.log('bg onMessage matches: ', matches, tabs[0].id);
 
       if (matches !== null && matches && matches[1]) {
         userId = matches[1];
