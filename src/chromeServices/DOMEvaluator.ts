@@ -1,1 +1,0 @@
-export const contentLoaded = () => console.log('Content Script');

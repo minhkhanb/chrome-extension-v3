@@ -13,7 +13,7 @@
       "32": "images/icons/icon32.png"
     },
     "default_title": "Click Me",
-    "default_popup": "index.html"
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
@@ -21,9 +21,7 @@
         "<all_urls>"
       ],
       "js": [
-        "./js/main.js",
-        "./js/content.js",
-        "./js/chunk.js"
+        "./js/content.js"
       ],
       "css": [
         "./css/main.css"
@@ -42,18 +40,18 @@
     "128": "./images/icons/icon128.png"
   },
   "host_permissions": [
-    "*://*.amazon.com/"
+    "<all_urls>"
   ],
   "externally_connectable": {
     "matches": [
-      "https://*.groceryswap.app/*",
+      "*://*.google.com/*",
       "*://localhost/*"
     ]
   },
   "web_accessible_resources": [
     {
       "resources": [
-        "/static/media/*"
+        "/images/*"
       ],
       "matches": [
         "<all_urls>"

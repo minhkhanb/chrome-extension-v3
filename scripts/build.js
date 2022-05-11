@@ -16,7 +16,7 @@ config.entry = {
     ),
   ],
   content: [
-    path.join(path.dirname(__dirname), 'src/chromeServices/DOMEvaluator.ts'),
+    path.join(path.dirname(__dirname), 'src/chromeServices/DOMEvaluator.tsx'),
   ],
 };
 
