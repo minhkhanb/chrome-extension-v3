@@ -35,10 +35,14 @@ miniCssExtractPlugin.options.chunkFilename = "css/[name].css"
 
 // Get rid of hash for media files
 config.module.rules[1].oneOf.forEach(oneOf => {
-  if (!oneOf.options || oneOf.options.name !== "media/[name].[hash:8].[ext]") {
-    return;
-  }
-  oneOf.options.name = "media/[name].[ext]"
+
+  if (!oneOf.use) return;
+
+  oneOf.use.forEach(loader => {
+    if (!loader.options || loader.options.name !== 'static/media/[name].[hash].[ext]') return;
+
+    loader.options.name = 'images/[name].[ext]';
+  });
 });
 
 // And the last thing: disabling splitting
